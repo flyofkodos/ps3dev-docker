@@ -5,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                docker build . -t ps3dev-docker
             }
         }
         stage('Test') {
