@@ -5,12 +5,12 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                docker build . -t ps3dev-docker
+                app = docker.build(ps3dev-docker)
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                app.inside {echo 'Testing..'}
             }
         }
         stage('Deploy') {
