@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 dockerfile {
-                    filename 'Dockerfile
+                    filename 'Dockerfile'
                     dir '.'
                     label 'ps3dev-docker:latest'
                 }
