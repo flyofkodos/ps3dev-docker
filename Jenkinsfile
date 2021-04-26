@@ -8,7 +8,7 @@ pipeline {
                 dockerfile {
                     filename 'Dockerfile'
                     dir '.'
-                    label 'ps3dev-docker:latest'
+                    label 'latest'
                 }
             }
         }
