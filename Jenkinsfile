@@ -1,16 +1,23 @@
 pipeline {
     agent any
-    def app
+
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
-                app = docker.build(ps3dev-docker)
+                dockerfile {
+                    filename 'Dockerfile
+                    dir '.'
+                    label 'ps3dev-docker:latest'
+                }
             }
         }
         stage('Test') {
             steps {
-                app.inside {echo 'Testing..'}
+                docker {
+				image 'ps3dev-docker'
+				label 'latest'
+				}
             }
         }
         stage('Deploy') {
