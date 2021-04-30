@@ -15,9 +15,9 @@ pipeline {
         stage('Test') {
             steps {
                 docker {
-				image 'ps3dev-docker'
-				label 'latest'
-				}
+			image 'ps3dev-docker'
+			label 'latest'
+			}
             }
         }
         stage('Deploy') {
