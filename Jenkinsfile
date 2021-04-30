@@ -1,5 +1,5 @@
 pipeline {
-	agent label 'Centosdocker'
+	agent {label 'Centosdocker'}
 
     stages {
         stage('Build') {
