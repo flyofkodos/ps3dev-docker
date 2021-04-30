@@ -1,5 +1,5 @@
 pipeline {
-    agent Centosdocker
+	agent {Centosdocker}
 
     stages {
         stage('Build') {
