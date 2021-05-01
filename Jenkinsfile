@@ -13,11 +13,14 @@ pipeline {
             }
         }
         stage('Test') {
-            steps {
+            agent {
                 docker {
-			image 'ps3dev-docker'
-			label 'latest'
-			}
+				image 'ps3dev-docker'
+				label 'latest'
+				}
+            }
+            steps {
+                sh 'hostname'
             }
         }
         stage('Deploy') {
