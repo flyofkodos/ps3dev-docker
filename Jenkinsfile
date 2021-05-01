@@ -16,7 +16,6 @@ pipeline {
             agent {
                 docker {
 				image 'ps3dev-docker'
-				label 'latest'
 				}
             }
             steps {
